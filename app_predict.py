@@ -26,8 +26,8 @@ feature_names = [
 ]
 
 # Streamlit UI
-st.title("Bacteria Detection Prediction")
-st.write("Enter the required details to predict whether bacteria is present or absent.")
+st.title("UTI Prediction")
+st.write("Enter the required details to predict whether UTI is present or not.")
 
 # User inputs
 age = st.number_input("Age", min_value=0, max_value=120, value=30)
@@ -71,5 +71,5 @@ input_scaled = scaler.transform(input_data)
 # Predict
 if st.button("Predict"):
     prediction = model.predict(input_scaled)[0]
-    result = "Bacteria Present" if prediction == 1 else "Bacteria Absent"
+    result = "UTI Present" if prediction == 1 else "UTI Absent"
     st.write(f"Prediction: **{result}**")
